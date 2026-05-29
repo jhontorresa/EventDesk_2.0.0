@@ -434,6 +434,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Burrito\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
