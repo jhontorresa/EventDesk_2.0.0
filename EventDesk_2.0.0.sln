@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37216.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventDesk_2.0.0", "EventDesk_2.0.0.csproj", "{AA9C64FA-5AB1-4734-95FD-F0AFD58D2266}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA9C64FA-5AB1-4734-95FD-F0AFD58D2266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9C64FA-5AB1-4734-95FD-F0AFD58D2266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9C64FA-5AB1-4734-95FD-F0AFD58D2266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9C64FA-5AB1-4734-95FD-F0AFD58D2266}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A0D4E24-0DA7-4A0F-9E4F-28D81136173C}
+	EndGlobalSection
+EndGlobal
