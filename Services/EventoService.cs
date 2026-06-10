@@ -63,6 +63,54 @@ namespace EventDesk_2._0._0.Services
                 .FirstOrDefault();
         }
 
+        public void ActualizarEventosVencidos()
+        {
+            var eventosVencidos = _eventos.Find(
+                x => x.FechaEvento < DateTime.Now &&
+                x.Activo == true
+            ).ToList();
+
+            foreach (var evento in eventosVencidos)
+            {
+                evento.Activo = false;
+
+                _eventos.ReplaceOne(
+                    x => x.Id == evento.Id,
+                    evento);
+            }
+        }
+
+        public void DesactivarEventosVencidos()
+        {
+            var eventos = _eventos.Find(x =>
+                x.Activo &&
+                x.FechaEvento < DateTime.Now
+            ).ToList();
+
+            foreach (var evento in eventos)
+            {
+                evento.Activo = false;
+
+                _eventos.ReplaceOne(
+                    x => x.Id == evento.Id,
+                    evento);
+            }
+        }
+
+        public List<Evento> ObtenerActivos()
+        {
+            return _eventos
+                .Find(x => x.Activo)
+                .ToList();
+        }
+
+        public List<Evento> BuscarPorNombre(string nombre)
+        {
+            return _eventos
+                .Find(x => x.Nombre.Contains(nombre))
+                .ToList();
+        }
+
         public void Actualizar(Evento evento)
         {
             ValidarEvento(evento);

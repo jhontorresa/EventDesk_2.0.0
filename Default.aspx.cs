@@ -13,6 +13,10 @@ namespace EventDesk_2._0._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UsuarioId"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }
