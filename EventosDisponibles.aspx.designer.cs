@@ -11,7 +11,7 @@ namespace EventDesk_2._0._0
 {
 
 
-    public partial class _Default
+    public partial class EventosDisponibles
     {
     }
 }

@@ -1,47 +1,28 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="EventDesk_2._0._0.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Site.Master"  CodeBehind="Login.aspx.cs" Inherits="EventDesk_2._0._0.Login" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <h2>Iniciar Sesión</h2>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+        <div class="card shadow-lg p-4" style="width: 350px; border-radius: 15px;">
+            
+            <h3 class="text-center mb-4">Iniciar Sesión</h3>
 
-            <asp:TextBox
-                ID="txtIdentificacion"
-                runat="server"
-                placeholder="Identificación">
-            </asp:TextBox>
+            <div class="mb-3">
+                <label class="form-label">Usuario</label>
+                <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
 
-            <br /><br />
+            <div class="mb-3">
+                <label class="form-label">Contraseña</label>
+                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+            </div>
 
-            <asp:TextBox
-                ID="txtPassword"
-                runat="server"
-                TextMode="Password"
-                placeholder="Contraseña">
-            </asp:TextBox>
+            <asp:Button ID="btnLogin" runat="server" Text="Ingresar"
+                CssClass="btn btn-primary w-100" OnClick="btnLogin_Click" />
 
-            <br /><br />
+            <asp:Label ID="lblMensaje" runat="server" CssClass="text-danger d-block text-center mt-2"></asp:Label>
 
-            <asp:Button
-                ID="btnLogin"
-                runat="server"
-                Text="Ingresar"
-                OnClick="btnLogin_Click" />
-
-            <br /><br />
-
-            <asp:Label
-                ID="lblMensaje"
-                runat="server">
-            </asp:Label>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+
+</asp:Content>
