@@ -40,7 +40,7 @@ namespace EventDesk_2._0._0
                     usuario.Rol;
 
                 Response.Redirect(
-                    "Default.aspx");
+                    "DashboardAdmin.aspx");
             }
             else
             {

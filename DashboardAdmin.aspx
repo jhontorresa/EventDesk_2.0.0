@@ -24,19 +24,6 @@
         </div>
 
 
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
-
-                    <h5 class="card-title">Usuarios</h5>
-                    <p class="card-text">Administra usuarios del sistema.</p>
-
-                    <a href="GestionUsuarios.aspx" class="btn btn-success w-100">Gestionar Usuarios</a>
-
-                </div>
-            </div>
-        </div>
-
 
         <div class="col-md-4">
             <div class="card shadow-sm">
@@ -58,17 +45,6 @@
 
         <div class="col-md-6">
 
-            <div class="card shadow-sm">
-                <div class="card-body">
-
-                    <h5>Acciones rápidas</h5>
-
-                    <a href="GestionEventos.aspx" class="btn btn-outline-primary w-100 mt-2">Crear Evento</a>
-                    <a href="GestionUsuarios.aspx" class="btn btn-outline-success w-100 mt-2">Ver Usuarios</a>
-                    <a href="Reportes.aspx" class="btn btn-outline-warning w-100 mt-2">Generar Reporte</a>
-
-                </div>
-            </div>
 
         </div>
 

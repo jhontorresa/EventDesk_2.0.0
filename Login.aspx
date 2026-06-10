@@ -9,7 +9,7 @@
 
             <div class="mb-3">
                 <label class="form-label">Usuario</label>
-                <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtIdentificacion" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
 
             <div class="mb-3">

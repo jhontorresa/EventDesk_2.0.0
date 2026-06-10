@@ -317,6 +317,7 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="DashboardAdmin.aspx" />
+    <Content Include="DashboardAprendiz.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="EventosDisponibles.aspx" />
     <Content Include="favicon.ico" />
@@ -324,7 +325,6 @@
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="MisInscripciones.aspx" />
-    <Content Include="Registro.aspx" />
     <Content Include="Reportes.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -404,6 +404,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DashboardAprendiz.aspx.cs">
+      <DependentUpon>DashboardAprendiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashboardAprendiz.aspx.designer.cs">
+      <DependentUpon>DashboardAprendiz.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Data\Conexion.cs" />
     <Compile Include="DashboardAdmin.aspx.cs">
       <DependentUpon>DashboardAdmin.aspx</DependentUpon>
@@ -462,13 +469,6 @@
       <DependentUpon>MisInscripciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.aspx.cs">
-      <DependentUpon>Registro.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Registro.aspx.designer.cs">
-      <DependentUpon>Registro.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Reportes.aspx.cs">
       <DependentUpon>Reportes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

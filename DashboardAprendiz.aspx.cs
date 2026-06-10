@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace EventDesk_2._0._0
 {
-    public partial class Registro : System.Web.UI.Page
+    public partial class DashboardAprendiz : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
