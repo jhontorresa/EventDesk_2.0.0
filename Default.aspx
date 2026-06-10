@@ -13,9 +13,7 @@
             Iniciar Sesión
         </a>
 
-        <a href="Registro.aspx" class="btn btn-outline-primary btn-lg">
-            Registrarse
-        </a>
+     
     </div>
 
     <div class="row g-4">
