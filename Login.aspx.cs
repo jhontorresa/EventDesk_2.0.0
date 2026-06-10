@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EventDesk_2._0._0.Models;
+using EventDesk_2._0._0.Services;
 
 namespace EventDesk_2._0._0
 {
@@ -11,26 +13,40 @@ namespace EventDesk_2._0._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string password = txtPassword.Text;
+            var service = new UsuarioService();
 
-            if (usuario == "admin" && password == "123")
+            long identificacion =
+                Convert.ToInt64(txtIdentificacion.Text);
+
+            string password =
+                txtPassword.Text;
+
+            Usuario usuario =
+                service.Login(
+                    identificacion,
+                    password);
+
+            if (usuario != null)
             {
-                Response.Redirect("DashboardAdmin.aspx");
-            }
-            else if (usuario == "aprendiz" && password == "123")
-            {
-                Response.Redirect("DashboardAprendiz.aspx");
+                Session["UsuarioId"] =
+                    usuario.Identificacion;
+
+                Session["Rol"] =
+                    usuario.Rol;
+
+                Response.Redirect(
+                    "Default.aspx");
             }
             else
             {
-                lblMensaje.Text = "Usuario o contraseña incorrectos";
+                lblMensaje.Text =
+                    "Credenciales incorrectas";
             }
         }
     }
-    }
+}
