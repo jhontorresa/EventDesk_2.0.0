@@ -1,65 +1,86 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DashboardAprendiz.aspx.cs" Inherits="EventDesk_2._0._0.DashboardAprendiz" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" OnItemDataBound= "rptEventos_ItemDataBound">
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Label 
+        ID="lblMensaje" 
+        runat="server" 
+        Font-Bold="true"
+        ForeColor="Green">
+    </asp:Label>
+
+
     <div class="container mt-4">
 
-    <h2 class="mb-4">Panel del Aprendiz</h2>
+        <h2 class="mb-4">Panel del Aprendiz</h2>
 
-    <div class="row g-3">
+        <h4 class="mb-3">Eventos Disponibles</h4>
 
-        
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
+        <div class="row g-3">
 
-                    <h5 class="card-title">Eventos Disponibles</h5>
-                    <p class="card-text">Explora e inscríbete en los eventos disponibles.</p>
+            <asp:Repeater ID="rptEventos" runat="server">
+                <ItemTemplate>
 
-                    <a href="EventosDisponibles.aspx" class="btn btn-primary w-100">Ver Eventos</a>
+                    <div class="col-md-4">
 
-                </div>
-            </div>
-        </div>
+                        <div class="card shadow-sm h-100">
 
-        
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
+                            <div class="card-body">
 
-                    <h5 class="card-title">Mis Inscripciones</h5>
-                    <p class="card-text">Consulta o cancela tus eventos inscritos.</p>
+                                <h5 class="card-title"><%# Eval("Nombre") %></h5>
 
-                    <a href="MisInscripciones.aspx" class="btn btn-success w-100">Ver Inscripciones</a>
+                                <p class="card-text"><%# Eval("TipoEvento") %></p>
 
-                </div>
-            </div>
+                                <p>
+                                  <strong>Fecha evento:</strong>
+                                  <%# Convert.ToDateTime(Eval("FechaEvento")).ToString("dd/MM/yyyy") %>
+                                     </p>
+
+                                 </p>
+
+                                  <strong>Hora evento:</strong>
+                                  <%# Eval("HoraEvento") %>
+                                 </p>
+
+                                 </p>
+                                 <strong>Fin del evento:</strong>
+                                 <%# Convert.ToDateTime (Eval("fechaFinEvento")).ToString("dd/MM/yyyy") %>
+                                 </p>
+
+                                 </p>
+                                  <strong>Inicio inscripción:</strong>
+                                  <%# Convert.ToDateTime (Eval("fechaInicio")).ToString("dd/MM/yyyy") %>
+                                </p>
+
+                                 </p>
+
+                                <strong>Hora inicio inscripción:</strong>
+                                 <%# Eval("horaInicio") %>
+                                 </p>
+
+                                <p>
+                                <strong>Fin inscripción:</strong>
+                                <%# Convert.ToDateTime(Eval("fechaFin")).ToString("dd/MM/yyyy") %>
+                                </p>
+
+                                <asp:Button
+                                    ID="btnInscribirse"
+                                    runat="server"
+                                    Text="Inscribirse"
+                                    CssClass="btn btn-success w-100"
+                                    CommandArgument='<%# Eval("Id") %>'
+                                    OnClick="btnInscribirse_Click" />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </ItemTemplate>
+            </asp:Repeater>
+
         </div>
 
     </div>
-
-    
-    <div class="row mt-4">
-
-        <div class="col-md-12">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
-
-                    <h5>Acciones rápidas</h5>
-
-                    <a href="EventosDisponibles.aspx" class="btn btn-outline-primary mt-2">Buscar Eventos</a>
-                    <a href="MisInscripciones.aspx" class="btn btn-outline-success mt-2">Ver Mis Eventos</a>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-   
-    <div class="text-center mt-4">
-        <a href="Login.aspx" class="btn btn-danger">Cerrar Sesión</a>
-    </div>
-
-</div>
 
 </asp:Content>

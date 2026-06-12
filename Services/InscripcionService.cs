@@ -34,10 +34,10 @@ namespace EventDesk_2._0._0.Services
             if (!evento.Activo)
                 throw new Exception("El evento no está activo.");
 
-            if (evento.FechaEvento < DateTime.Now)
+            if (evento.fechaEvento < DateTime.Now)
                 throw new Exception("El evento ya venció.");
 
-            if (evento.FechaCierreInscripcion < DateTime.Now)
+            if (evento.fechaFin < DateTime.Now)
                 throw new Exception("Las inscripciones están cerradas.");
 
             var existe = _inscripciones.Find(x =>

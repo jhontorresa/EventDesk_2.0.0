@@ -30,24 +30,22 @@ namespace EventDesk_2._0._0.Services
 
         private void ValidarEvento(Evento evento)
         {
-            if (evento.FechaEvento <= DateTime.Now)
+            if (evento.fechaEvento <= DateTime.Now)
                 throw new Exception("La fecha del evento debe ser futura.");
 
-            if (evento.FechaInicioInscripcion >= evento.FechaEvento)
+            if (evento.fechaInicio >= evento.fechaEvento)
                 throw new Exception("La fecha de inicio de inscripción debe ser menor que la fecha del evento.");
 
-            if (evento.FechaCierreInscripcion >= evento.FechaEvento)
+            if (evento.fechaFin >= evento.fechaEvento)
                 throw new Exception("La fecha de cierre de inscripción debe ser menor que la fecha del evento.");
 
-            if (evento.HoraInicio >= evento.HoraFin)
-                throw new Exception("La hora de inicio debe ser menor que la hora final.");
 
-            if (evento.Categoria == "Individual" &&
-                evento.MaximoIntegrantes != 1)
+            if (evento.tipoEvento == "Individual" &&
+                evento.maximoIntegrantes != 1)
                 throw new Exception("Los eventos individuales deben tener máximo 1 integrante.");
 
-            if (evento.Categoria == "Grupal" &&
-                evento.MaximoIntegrantes <= 1)
+            if (evento.tipoInscripcion == "Grupal" &&
+                evento.maximoIntegrantes <= 1)
                 throw new Exception("Los eventos grupales deben tener más de 1 integrante.");
         }
 
@@ -66,7 +64,7 @@ namespace EventDesk_2._0._0.Services
         public void ActualizarEventosVencidos()
         {
             var eventosVencidos = _eventos.Find(
-                x => x.FechaEvento < DateTime.Now &&
+                x => x.fechaEvento < DateTime.Now &&
                 x.Activo == true
             ).ToList();
 
@@ -84,7 +82,7 @@ namespace EventDesk_2._0._0.Services
         {
             var eventos = _eventos.Find(x =>
                 x.Activo &&
-                x.FechaEvento < DateTime.Now
+                x.fechaEvento < DateTime.Now
             ).ToList();
 
             foreach (var evento in eventos)

@@ -10,22 +10,32 @@ namespace EventDesk_2._0._0.Models
     {
         public ObjectId Id { get; set; }
 
-        public string Nombre { get; set; }
+    public string Nombre { get; set; }
 
-        public string Categoria { get; set; }
+    public string tipoInscripcion { get; set; }
 
-        public int MaximoIntegrantes { get; set; }
+    public int maximoIntegrantes { get; set; }
 
-        public DateTime FechaEvento { get; set; }
+    public string modalidadEvento { get; set; }
 
-        public DateTime FechaInicioInscripcion { get; set; }
+    public string tipoEvento { get; set; }
 
-        public DateTime FechaCierreInscripcion { get; set; }
+    public DateTime fechaEvento { get; set; }
 
-        public TimeSpan HoraInicio { get; set; }
+    public string horaEvento { get; set; }
 
-        public TimeSpan HoraFin { get; set; }
+    public DateTime fechaFinEvento { get; set; }
 
-        public bool Activo { get; set; }
+    public string lugarEvento { get; set; }
+
+    public DateTime fechaInicio { get; set; }
+
+    public string horaInicio { get; set; }
+
+    public DateTime fechaFin { get; set; }
+
+    public bool Activo { get; set; }
+
+    public string horaFin { get; set; }
     }
 }

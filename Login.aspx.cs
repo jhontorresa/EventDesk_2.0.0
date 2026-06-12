@@ -39,8 +39,18 @@ namespace EventDesk_2._0._0
                 Session["Rol"] =
                     usuario.Rol;
 
-                Response.Redirect(
-                    "DashboardAdmin.aspx");
+                if(usuario.Rol == "Administrador")
+                {
+                    Response.Redirect("DashboardAdmin.aspx");
+                }
+                else if(usuario.Rol == "Aprendiz")
+                {
+                    Response.Redirect("DashboardAprendiz.aspx");
+                }
+                else
+                {
+                    lblMensaje.Text = "Rol no conocido";
+                }
             }
             else
             {
