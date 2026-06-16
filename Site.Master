@@ -34,21 +34,30 @@
                 <div class="collapse navbar-collapse" id="menu">
                     <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="Default.aspx">Inicio</a>
+                     <li class="nav-item">
+                       <a class="nav-link" href="Default.aspx">Inicio</a>
+                       </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="Eventos.aspx">Eventos</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="Eventos.aspx">Eventos</a>
-                        </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="Login.aspx">Login</a>
+                   </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="Login.aspx">Login</a>
-                        </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Registro.aspx">Registro</a>
+                   </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="Registro.aspx">Registro</a>
-                        </li>
+                 <li class="nav-item">
+                   <asp:Button
+                   ID="btnSalir"
+                   runat="server"
+                   Text="Cerrar sesión"
+                   CssClass="btn btn-danger ms-3"
+                   OnClick="btnSalir_Click" />
+                 </li>
 
                     </ul>
 
