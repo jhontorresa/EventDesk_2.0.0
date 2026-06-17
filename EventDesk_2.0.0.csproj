@@ -319,6 +319,7 @@
     <Content Include="DashboardAdmin.aspx" />
     <Content Include="DashboardAprendiz.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EditarEvento.aspx" />
     <Content Include="EventosDisponibles.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="GestionEventos.aspx" />
@@ -425,6 +426,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarEvento.aspx.cs">
+      <DependentUpon>EditarEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarEvento.aspx.designer.cs">
+      <DependentUpon>EditarEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="EventosDisponibles.aspx.cs">
       <DependentUpon>EventosDisponibles.aspx</DependentUpon>

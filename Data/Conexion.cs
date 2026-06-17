@@ -22,7 +22,7 @@ namespace EventDesk_2._0._0.Data
             _database.GetCollection<Usuario>("Usuarios");
 
         public IMongoCollection<Evento> Eventos =>
-            _database.GetCollection<Evento>("Eventos");
+            _database.GetCollection<Evento>("Evento");
 
         public IMongoCollection<Inscripcion> Inscripciones =>
             _database.GetCollection<Inscripcion>("Inscripciones");

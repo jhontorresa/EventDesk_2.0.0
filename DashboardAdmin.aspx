@@ -10,33 +10,119 @@
     <div class="row g-3">
 
 
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
+       <div class="container mt-4">
 
-                    <h5 class="card-title">Eventos</h5>
-                    <p class="card-text">Gestiona creación, edición y eliminación de eventos.</p>
+    <h2 class="mb-4">Gestión de Eventos</h2>
 
-                    <a href="GestionEventos.aspx" class="btn btn-primary w-100">Gestionar Eventos</a>
+    
+    <div class="mb-3">
+        <button class="btn btn-primary">+ Crear Evento</button>
+    </div>
 
-                </div>
-            </div>
-        </div>
+   
 
-
+    <div class="row mb-3">
 
         <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-body text-center">
-
-                    <h5 class="card-title">Reportes</h5>
-                    <p class="card-text">Genera reportes de eventos e inscripciones.</p>
-
-                    <a href="Reportes.aspx" class="btn btn-warning w-100">Ver Reportes</a>
-
-                </div>
-            </div>
+            <input type="text" class="form-control" placeholder="Buscar evento..." />
         </div>
+
+        <div class="col-md-3">
+            <select class="form-select">
+                <option>Todos</option>
+                <option>Académico</option>
+                <option>Deportivo</option>
+                <option>Cultural</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-secondary w-100">Filtrar</button>
+        </div>
+
+    </div>
+
+    
+    <div class="card shadow-sm">
+
+        <div class="card-body">
+
+            <table class="table table-hover">
+
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Fecha</th>
+                        <th>Cupos</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <asp:Repeater ID="rptEventos" runat="server" OnItemCommand="rptEventos_ItemCommand">
+        <ItemTemplate>
+            <tr>
+                <td><%# Eval("Nombre") %></td>
+                <td><%# Eval("tipoEvento") %></td>
+                <td><%# Eval("fechaEvento", "{0:yyyy-MM-dd}") %></td>
+                <td><%# Eval("maximoIntegrantes") %></td>
+
+                <td>
+                       <asp:LinkButton 
+                        ID="btnEditar"
+                        runat="server"
+                        CssClass="btn btn-sm btn-warning"
+                        CommandName="Editar"
+                        CommandArgument='<%# Eval("Id") %>'>
+                        Editar
+                    </asp:LinkButton>
+
+                  
+                </td>
+            </tr>
+        </ItemTemplate>
+    </asp:Repeater>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+     <div class="row mt-5 justify-content-center">
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h5 class="card-title">Reportes</h5>
+
+                <p class="card-text">
+                    Genera reportes de eventos e inscripciones.
+                </p>
+
+                <a href="Reportes.aspx"
+                   class="btn btn-warning w-100">
+                    Ver Reportes
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
     </div>
 
@@ -51,16 +137,7 @@
       
         <div class="col-md-6">
 
-            <div class="card shadow-sm text-center">
-                <div class="card-body">
-
-                    <h5>Sesión</h5>
-                    <p class="text-muted">Cerrar sesión del sistema</p>
-
-                    <a href="Login.aspx" class="btn btn-danger w-100">Cerrar Sesión</a>
-
-                </div>
-            </div>
+           
 
         </div>
 

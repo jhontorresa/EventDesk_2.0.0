@@ -6,9 +6,12 @@
     <h2 class="mb-4">Gestión de Eventos</h2>
 
     
-    <div class="mb-3">
-        <button class="btn btn-primary">+ Crear Evento</button>
-    </div>
+ <asp:Button 
+     ID="btnCrear"
+     runat="server"
+     Text="+ Crear Evento"
+     CssClass="btn btn-primary"
+     OnClick="btnCrear_Click"/>
 
    
 
@@ -45,7 +48,7 @@
                         <th>Nombre</th>
                         <th>Tipo</th>
                         <th>Fecha</th>
-                        <th>Cupos</th>
+                        <th>Maximo integrantes</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -58,8 +61,22 @@
                         <td>2026-06-10</td>
                         <td>30</td>
                         <td>
-                            <button class="btn btn-sm btn-warning">Editar</button>
-                            <button class="btn btn-sm btn-danger">Eliminar</button>
+
+
+                            <asp:Button
+                             ID="btnEditar"
+                             runat="server"
+                             Text="Editar"
+                             CssClass="btn btn-sm btn-warning"
+                             OnClick="btnEditar_Click" />
+
+                            <asp:Button
+
+                             ID="btnEliminar"
+                             runat="server"
+                             Text="Eliminar"
+                             CssClass="btn btn-sm btn-danger"
+                             OnClick="btnEliminar_Click" />
                         </td>
                     </tr>
 

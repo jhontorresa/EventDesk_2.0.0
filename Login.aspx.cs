@@ -27,9 +27,7 @@ namespace EventDesk_2._0._0
                 txtPassword.Text;
 
             Usuario usuario =
-                service.Login(
-                    identificacion,
-                    password);
+                service.Login( identificacion, password);
 
             if (usuario != null)
             {
@@ -45,7 +43,7 @@ namespace EventDesk_2._0._0
                 }
                 else if(usuario.Rol == "Aprendiz")
                 {
-                    Response.Redirect("GestionEventos.aspx");
+                    Response.Redirect("DashboardAdmin.aspx");
                 }
                 else
                 {
