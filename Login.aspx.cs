@@ -43,7 +43,7 @@ namespace EventDesk_2._0._0
                 }
                 else if(usuario.Rol == "Aprendiz")
                 {
-                    Response.Redirect("DashboardAdmin.aspx");
+                    Response.Redirect("DashboardAprendiz.aspx");
                 }
                 else
                 {
