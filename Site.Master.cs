@@ -11,7 +11,10 @@ namespace EventDesk_2._0._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["NombreCompleto"] != null)
+            {
+                lblUsuario.Text = "Hola, " + Session["NombreCompleto"].ToString();
+            }
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)

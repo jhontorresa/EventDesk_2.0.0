@@ -31,13 +31,17 @@ namespace EventDesk_2._0._0
 
             if (usuario != null)
             {
-                Session["UsuarioId"] =
-                    usuario.Identificacion;
+                Session["UsuarioId"] = usuario.Identificacion;
 
-                Session["Rol"] =
-                    usuario.Rol;
+                Session["Rol"] = usuario.Rol;
 
-                if(usuario.Rol == "Administrador")
+                Session["NombreCompleto"] = usuario.NombreCompleto;
+
+                Session["Ficha"] = usuario.Ficha;
+
+                Session["ProgramaFormacion"] = usuario.ProgramaFormacion;
+
+                if (usuario.Rol == "Administrador")
                 {
                     Response.Redirect("DashboardAdmin.aspx");
                 }

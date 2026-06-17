@@ -41,32 +41,19 @@ namespace EventDesk_2._0._0
 
                 long usuarioId = Convert.ToInt64(Session["UsuarioId"]);
 
-                var client = new MongoClient("mongodb://localhost:27017");
-                var db = client.GetDatabase("EventDesk");
-                var collection = db.GetCollection<Inscripcion>("Inscripcion");
-
-              
-                var existe = collection.Find(x =>
-                    x.UsuarioId == usuarioId &&
-                    x.EventoId == eventoId
-                ).FirstOrDefault();
-
-                if (existe != null)
-                {
-                    lblMensaje.ForeColor = System.Drawing.Color.Red;
-                    lblMensaje.Text = "Ya estás inscrito en este evento.";
-                    return;
-                }
-
+                var service = new InscripcionService();
             
                 Inscripcion inscripcion = new Inscripcion
                 {
                     UsuarioId = usuarioId,
                     EventoId = eventoId,
+                    NombreCompleto = Session["NombreCompleto"].ToString(),
+                    Ficha = Session["Ficha"].ToString(),
+                    ProgramaFormacion = Session["ProgramaFormacion"].ToString(),
                     FechaInscripcion = DateTime.Now
                 };
 
-                collection.InsertOne(inscripcion);
+                service.Registrar(inscripcion);
 
                 lblMensaje.ForeColor = System.Drawing.Color.Green;
                 lblMensaje.Text = "Inscripción realizada correctamente.";

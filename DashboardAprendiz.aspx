@@ -11,7 +11,13 @@
 
     <div class="container mt-4">
 
-        <h2 class="mb-4">Panel del Aprendiz</h2>
+        <asp:Label
+            ID="lblUsuario"
+            runat="server"
+            CssClass="fw-bold">
+        </asp:Label>
+
+        <h2 class="mb-4">Bienvenido Aprendiz</h2>
 
         <h4 class="mb-3">Eventos Disponibles</h4>
 

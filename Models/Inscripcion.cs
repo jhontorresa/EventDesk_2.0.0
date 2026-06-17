@@ -9,11 +9,11 @@ namespace EventDesk_2._0._0.Models
     public class Inscripcion
     {
         public ObjectId Id { get; set; }
-
         public long UsuarioId { get; set; }
-
         public ObjectId EventoId { get; set; }
-
+        public string NombreCompleto { get; set; }
+        public string Ficha {  get; set; }
+        public string ProgramaFormacion { get; set; }
         public DateTime FechaInscripcion { get; set; }
     }
 }
