@@ -46,7 +46,7 @@
                     ID="lblUsuario"
                     runat="server"
                     Visible="false"
-                    CssClass="navbar-text text-white me-2">
+                    CssClass="text-white fw-bold fs-5 mx-auto">
                 </asp:Label>
 
                 <asp:Button
@@ -54,7 +54,7 @@
                     runat="server"
                     Visible="false"
                     Text="Cerrar Sesión"
-                    CssClass="btn btn-outline-light btn-sm"
+                    CssClass="btn btn-danger btn-sm ms-2"
                     OnClick="btnSalir_Click" />
             </div>
 

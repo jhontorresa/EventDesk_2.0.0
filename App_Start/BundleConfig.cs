@@ -35,6 +35,18 @@ namespace EventDesk_2._0._0
             // para la producción, use la herramienta de compilación disponible en https://modernizr.com para seleccionar solo las pruebas que necesite
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
+            // Bootstrap CSS + site styles
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/bootstrap.min.css",
+                "~/Content/Site.css"));
+
+            // Bootstrap JS bundle
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                "~/Scripts/bootstrap.bundle.min.js"));
+
+            // jQuery bundle (optional, ScriptManager mapping is already configured)
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                "~/Scripts/jquery-3.7.0.min.js"));
         }
 
         public static void RegisterJQueryScriptManager()

@@ -25,6 +25,29 @@ namespace EventDesk_2._0._0
 
             Response.Redirect("Login.aspx");
         }
+
+        protected override void OnPreRender(EventArgs e)
+        {
+            base.OnPreRender(e);
+            UpdateLoginDisplay();
+        }
+
+        private void UpdateLoginDisplay()
+        {
+            var nombre = Session["NombreCompleto"] as string;
+            if (!string.IsNullOrEmpty(nombre))
+            {
+                lblUsuario.Text = "Hola, " + nombre;
+                lblUsuario.Visible = true;
+                btnSalir.Visible = true;
+            }
+            else
+            {
+                lblUsuario.Text = string.Empty;
+                lblUsuario.Visible = false;
+                btnSalir.Visible = false;
+            }
+        }
     }
 
     
